@@ -1,0 +1,92 @@
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+.pageContainer{
+display: grid;
+grid-template-rows: auto 1fr auto;
+height: 100%;
+}
+
+.navBar{
+background: #99bbff;
+text-align: center;
+}
+
+.main-section-grid-container {
+display:grid;
+grid-template-columns: auto 1fr;
+}
+
+.MainPage{
+background:white;
+background-image: url("background.jpg");
+}
+
+#facebookIcon{
+  width:30px;
+  margin-left: 15px;
+  margin-right: 15px;
+}
+#facebookIcon:hover{
+  width:40px;
+  background-color: white;
+  border-radius:25px;
+}
+
+#linkedinIcon{
+  width:30px;
+}
+#linkedinIcon:hover{
+  width:40px;
+  background-color: white;
+  border-radius:10px;
+}
+
+#profilePicture{
+  position:relative;
+  width:349px;
+  float:left;
+}
+
+#InfoDiv{
+  text-align: center;
+  border:3px solid black;
+  background-color: #d9d9d9  ;
+  position: relative;
+  margin-left: 268px;
+  height:553px;
+}
+
+#cvPage{
+  border:3px solid black;
+  background-color: #f2f2f2  ;
+  height:610px;
+}
+
+#contactPage{
+  padding-left: 370px;
+  padding-right:370px;
+  border:3px solid black;
+  background-color: #f2f2f2  ;
+  height:610px;
+}
+#contactPage>h1{
+  text-align: center;
+  padding-top:30px;
+  padding-bottom: 30px;
+}
+
+#submitButton{
+  margin-top: 20px;
+  margin-left: 215px;
+}
+
+#emailIcon{
+  filter:grayscale(100%);
+  margin-left: 150px;
+  margin-top: 30px;
+  width:200px;
+  border-radius: 60px;
+}
