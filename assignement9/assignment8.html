@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>assignment8</title>
+</head>
+<body>
+{% if UserFirstName %}
+    <h2>Hello {{ UserFirstName }}!</h2>
+{% endif %}
+
+<h1>hiiii</h1>
+{% extends 'cv_yuval.html' %}
+{% block block1 %}
+    <h2>list of my hobbies</h2>
+    {% if hobbies %}
+<ul>{% for hobbie in hobbies %}
+    <li>{{ hobbie | upper}}</li>
+    {% endfor %}
+</ul>
+    {% endif %}
+{% endblock %}
+
+{% include 'yuvalnew.html' %}
+
+
+
+</body>
+</html>

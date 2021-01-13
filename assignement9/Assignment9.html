@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Assignment 9</title>
+</head>
+<body style="text-align: center">
+<h1>This is assignment number 9</h1>
+<!--This is the GET form-->
+<p>Current method request is {{ method }}</p>
+    <h3>Search Form: "GET" Method</h3>
+        <form action="/assignment9" method="get">
+            <p>Please enter the email of the user to get his information: </p>
+            <input name="email">
+            <input type="submit">
+        </form>
+<!--This flask code will check if the wantedUsers array has some values in it. To know if there are users to show and print it-->
+    {% if users %}
+        {% for user in users %}
+            <ul style="padding:5px; background-color: #99bbff; border:3px solid black;">
+                <li>First Name: {{ user.firstname }}</li>
+                <li>Email: {{ user.email }}</li>
+                <li>Age: {{ user.age }}</li>
+                <li>City: {{ user.city }}</li>
+                <li>Favorite Hobby: {{ user.favorite_hobby }}</li>
+            </ul>
+        {% endfor %}
+        <h1>{{ alertMessage }}</h1>
+    {% endif %}
+
+<!--This is the POST Form-->
+    <h3>Registration Form: "POST" Method</h3>
+        <form action="/assignment9" method="post">
+            <label>Email:</label><input name="Email" required> <br>
+            <label>User Name:</label><input name="UserName" required><br>
+            <label>Password:</label><input name="Password" required><br>
+            <label>Age:</label><input name="Age"><br>
+            <label>First Name:</label><input name="FirstName"><br>
+            <input type="submit">
+        </form>
+<!--Check global session if exists, with optio to logout-->
+{% if UserFirstName %}
+    <h2>Hello {{ UserFirstName }}!</h2>
+
+            <button onclick="(function (){
+                console.log('logout')
+    window.location.href = '/logout'
+        })();return false;">Logout</button>
+{% endif %}
+
+
+</body>
+</html>
