@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>This is Assignment 10</h1>
+<h2>Insert Form</h2>
+    <form action="/assignment10" method="POST">
+        <label>First Name:</label><input name="firstName">
+        <label>Email:</label><input name="email">
+        <label>Age:</label><input name="age">
+        <label>City:</label><input name="city">
+        <label>Favorite Hobby:</label><input name="favoriteHobby"><br>
+        <input type="submit">
+    </form>
+{% if backUser %}
+<h3>Welcome to my website {{ backUser.firstName }}</h3>
+{% endif %}
+
+<h2>Update Form</h2>
+    <form action="/assignment10/update" method="POST">
+        <label>User ID:</label><input name="ID">
+        <label>First Name:</label><input name="firstName">
+        <label>Email:</label><input name="email">
+        <label>Age:</label><input name="age">
+        <label>City:</label><input name="city">
+        <label>Favorite Hobby:</label><input name="favoriteHobby"><br>
+        <input type="submit">
+    </form>
+<h2>Delete Form</h2>
+<form action="/assignment10/delete" method="get">
+    <label>User ID:</label><input name="ID">
+    <input type="submit">
+</form>
+
+
+
+<h2>List Of Users</h2>
+{% if users %}
+    {% for user in users %}
+        <ol>
+            <li>User ID: {{ user.ID }}</li>
+            <li>First Name: {{ user.firstName }}</li>
+            <li>Email: {{ user.email }}</li>
+            <li>Age: {{ user.age }}</li>
+            <li>City: {{ user.city }}</li>
+            <li>Favorite Hobby: {{ user.favoriteHobby }}</li>
+        </ol>
+    {% endfor %}
+{% endif %}
+
+</body>
+</html>
